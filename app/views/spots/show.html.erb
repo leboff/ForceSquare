@@ -1,0 +1,41 @@
+<div data-role="page" id="spot-show">
+
+  <div data-role="header">
+    <h1>welcome <%= @username %></h1>
+  </div>
+  <!-- /header -->
+  <p class="notice"><%= notice %></p>
+
+  <div data-role="content" id="spot-show-content">
+
+
+    <div data-role="collapsible" data-collapsed="false" data-content-theme="c">
+      <h3>Address</h3>
+      <ul data-role="listview" data-theme="d">
+
+
+        <li><p><strong>Address: </strong> <%= @venue.location.address %></p></li>
+        <li><p><strong>Cross Street: </strong> <%= @venue.location.crossStreet %></p></li>
+        <li><p><strong>City: </strong> <%= @venue.location.city %></p></li>
+        <li><p><strong>State: </strong> <%= @venue.location.state %></p></li>
+        <li><p><strong>Zip: </strong> <%= @venue.location.postalCode %></p></li>
+        <li><p><strong>Categories: </strong>
+          <% @venue.categories.each do |category| %>
+              <img src="<%= category.icon %>"/>
+          <% end %>
+        </p></li>
+      </ul>
+    </div>
+    <div data-role="collapsible" data-collapsed="false" data-content-theme="c">
+      <h3>Tips</h3>
+      <% @venue.tips.groups.each do |group| %>
+          <% group.items.each do |tip| %>
+              <p> -<%= tip.text %></p>
+          <% end %>
+      <% end %>
+    </div>
+
+  </div>
+  <!-- /content -->
+
+</div>

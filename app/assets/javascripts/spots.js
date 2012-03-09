@@ -10,7 +10,8 @@ function success(position) {
         function(data) {
             console.log(data.groups[0].items)
             $.each(data.groups[0].items, function(i, val) {
-                item = '<li id="' + val.id + '"><a href="#">' + val.name + '</a></li>';
+                item = '<li id="' + val.id + '"><a href="/spots/'+val.id+'">' + val.name + '</a></li>';
+
                 $('#spot-list').append(item);
 
             });
