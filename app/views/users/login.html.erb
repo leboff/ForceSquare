@@ -1,0 +1,25 @@
+
+<div data-role="page">
+
+  <div data-role="header">
+    <h1>welcome <%= @username %></h1>
+  </div>
+  <!-- /header -->
+   <% if flash[:notice]  %>
+    <div data-role="content"  data-theme="e" align="center"><%= flash[:notice] %></div>
+  <% end %>
+  <div data-role="content">
+    <a href="/auth/salesforce" rel="external" data-role="button" data-icon="plus" data-iconpos="right">Salesforce
+       <% if @sf %> <span class="conn">CONNECTED</span> <% else %> <span class="noconn">NOT CONNECTED</span>  <% end %> </a>
+    <a href="/auth/foursquare" rel="external" data-role="button" data-icon="plus" data-iconpos="right">Foursquare
+          <% if @fs %> <span class="conn">CONNECTED</span> <% else %> <span class="noconn">NOT CONNECTED</span>  <% end %> </a>
+
+  <div></div>
+    <% if @sf && @fs %>
+      <a href="/spots"  data-role="button" data-icon="arrow-r" data-iconpos="right">What's near me...</a>
+    <% end %>
+
+  </div>
+  <!-- /content -->
+
+</div>
