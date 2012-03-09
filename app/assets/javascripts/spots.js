@@ -1,8 +1,11 @@
+var loaded = false;
 function success(position) {
     //on success we'll send a call out to foursquare to show us the stuff in our area
     //$.mobile.hidePageLoadingMsg();
+    if(!loaded) {
+    loaded = true;
     $.mobile.showPageLoadingMsg("a", "Loading Places...", false);
-    console.log('lat: ' + position.coords.latitude + ' lon: ' + position.coords.longitude);
+    //console.log('lat: ' + position.coords.latitude + ' lon: ' + position.coords.longitude);
     coords = { lat: position.coords.latitude, lon:position.coords.longitude }
     $.getJSON(
         '/search?',
@@ -18,6 +21,7 @@ function success(position) {
             $.mobile.hidePageLoadingMsg();
             $('#spot-list').listview('refresh');
         });
+    }
 
 }
 
