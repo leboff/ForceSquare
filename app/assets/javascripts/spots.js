@@ -21,6 +21,8 @@ function success(position) {
             $.mobile.hidePageLoadingMsg();
             $('#spot-list').listview('refresh');
         });
+    }else{
+      $.mobile.hidePageLoadingMsg();
     }
 
 }

@@ -11,4 +11,14 @@ class FoursquareController < ApplicationController
       redirect_to :controller => 'users', :action => 'login'
     end
   end
+  def checkin
+    if session[:sf_hash] && session[:fs_hash]
+      client = Foursquare2::Client.new(:oauth_token => session[:fs_hash].credentials.token) unless client
+      client.add_checkin(params[:id])
+
+
+    end
+
+
+  end
 end

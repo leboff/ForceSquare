@@ -1,7 +1,7 @@
 <div data-role="page" data-add-back-btn="true" id="spot-show">
 
-  <div data-role="header" >
-    <h1><%=@venue.name%></h1>
+  <div data-role="header">
+    <h1><%= @venue.name %></h1>
   </div>
   <!-- /header -->
   <p class="notice"><%= notice %></p>
@@ -26,6 +26,13 @@
         </p></li>
       </ul>
     </div>
+    <form action="/checkin" method="get">
+
+      <input type="hidden" id="id" name="id" value=<%= @venue.id %>/>
+      <button type="submit" data-theme="c" data-icon="check" data-iconpos="top">Check In Here</button>
+
+    </form>
+
     <div data-role="collapsible" data-collapsed="false" data-content-theme="c">
       <h3>Tips</h3>
       <% @venue.tips.groups.each do |group| %>
@@ -34,6 +41,7 @@
           <% end %>
       <% end %>
     </div>
+
 
   </div>
   <!-- /content -->
