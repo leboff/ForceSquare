@@ -10,7 +10,8 @@
 //this is probably unrecommended but... fuck it
 $(document).bind("mobileinit", function(){
   $.extend(  $.mobile , {
-    loadingMessageTextVisible: true
+    loadingMessageTextVisible: true,
+
   });
 });
 
