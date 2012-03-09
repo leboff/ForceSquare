@@ -10,7 +10,7 @@ ForceSquare::Application.routes.draw do
   match '/auth/failure' => 'sessions#failure'
   match '/login' => 'users#login'
   match '/search' => 'foursquare#search'
-
+  match '/checkin' => 'foursquare#checkin'
   resources :spots
 
 
