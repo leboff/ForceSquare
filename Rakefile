@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-ForceSpot::Application.load_tasks
+ForceSquare::Application.load_tasks
